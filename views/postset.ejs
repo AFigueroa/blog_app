@@ -1,0 +1,85 @@
+<% include header %>
+<!--		
+====================================
+			Update Post Form
+=====================================
+-->			
+<div class="row">
+	<div class="small-12 columns">
+		<p> </p>
+	</div>
+	<div class="small-12 columns">
+		<h1 class="text-center">Update post</h1>
+	</div>
+	<div class="small-12 columns">
+<!--						
+		Form Start
+-->
+		
+		<form action="/posts/setaction" method="get">	
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="row collapse">						
+<!--						
+						Author
+-->
+						<input name="author" type="text" value="<%= author %>" placeholder="Author">
+						<input name="postId" type="hidden" value="<%= postId %>">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="row collapse">
+
+<!--						
+						Category
+-->
+						<select name="category" value="<%= author %>">
+							<option default>Select a Category...</option>
+							<option selected>General</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="row collapse">
+<!--						
+						Title
+-->
+						<input name="title" value="<%= postTitle %>" type="text" placeholder="Title">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="row collapse">
+<!--						
+							Text
+-->
+						<textarea name="content" placeholder="Write your post here...">
+								<%= content %>
+						</textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="row collapse">
+<!--						
+						Submit
+-->
+						<input class="small-12 columns submit button [radius round]" type="submit" value="Publish">
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<% include footer %>

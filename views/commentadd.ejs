@@ -1,0 +1,58 @@
+<% include header %>
+
+<!--		
+====================================
+			Sign up Form
+=====================================
+-->	
+
+<div class="row">
+	<div class="small-12 columns">
+		<p> </p>
+	</div>
+	<div class="small-12 columns">
+		<h1 class="text-center">Comment</h1>
+	</div>
+	<div class="small-12 columns">
+<!--						
+		Form Start
+-->
+		<form action="/comments/createaction" method="get">	
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="row collapse">						
+<!--						
+						Author
+-->
+						<input type="text" name="author" placeholder="Author">
+						<input type="hidden" name="_id" value="<%= _id %>">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="row collapse">
+<!--						
+						Text
+-->
+						<textarea name="content" placeholder="Write your post here..."></textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="row collapse">
+<!--						
+						Submit
+-->
+						<input class="small-12 columns submit button [radius round]" type="submit" value="Publish">
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<% include footer %>

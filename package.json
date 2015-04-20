@@ -1,0 +1,21 @@
+{
+  "name": "adb-crud",
+  "version": "0.0.1",
+  "authors": [
+    {
+      "name": "admin",
+      "email": "afigueroa.webdev@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "ejs": "*",
+    "express": "*",
+    "hashids": "*",
+    "moment": "^2.8.3",
+    "mongojs": "*",
+    "node-uuid": "*"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}

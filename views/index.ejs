@@ -1,0 +1,89 @@
+<% include header %>
+<!--		
+====================================
+ 			Home Page
+=====================================
+-->			
+<div class="row">
+	<div class="small-12 columns">
+		<p> </p>
+	</div>
+	<div class="small-12 columns">
+		<h1 class="text-center">Hello friend</h1>
+	</div>
+	<div class="small-12 columns">
+		<p class="text-center">
+			Welcome to our blog. Feel free to comment on any post, or create one of your own.
+		</p>
+	</div>
+</div>
+
+<p class="text-center">----------------------------------------</p>
+
+<!--		
+====================================
+		  All Posts 
+=====================================
+-->		
+<div class="row">
+	<div class="small-12 columns">
+		<h2 class="text-center">All Posts</h2>
+	</div>
+	<div class="small-12 columns">
+		<a href="/posts/create"><h3 class="text-right" id="addpost">+Add</h3></a>
+	</div>
+	
+
+<!--	
+		Foreach post loop begins here...
+-->
+
+<% for(var i=0; i<docs.length; i++){ %>
+		 	
+	
+
+	<div class="small-12 columns">
+		<div class="panel callout radius">
+			<h5 class="small-12 text-center">Author: <%= docs[i]['author'] %></h5>
+			
+			<p class="text-center"><%= docs[i]['time']%></p>
+			
+			<h2 class="small-12 text-center"><%= docs[i]['title'] %></h2>
+			<h3 class="small-12 text-center subheader"><%= docs[i]['category'] %></h3>
+			<p class="small-12 text-center"><%= docs[i]['content'] %></p>
+			<div>
+			<a href="/posts/show?postId=<%= docs[i]['_id'] %>"><h3 id="white" class="small-6 left button [radius round] submit text-center" style="background-color:grey">Details</h3></a>
+			<a href="/posts/set?postId=<%= docs[i]['_id'] %>"><h3 id="white" class="small-6 left button [radius round] submit text-center">Update</h3></a>
+			</div>
+<!--		
+		 	All Comments for this post
+-->	
+			
+			<div style="padding-top:25px;">
+				<h4>Comments:</h4>
+<!--				
+				Begin foreach loop here...
+-->
+				<% for(var c=0; c<docs[i]['comments'].length; c++){ %>
+					<div class="panel">
+						<h5><%= docs[i]['comments'][c]['author']%></h5>
+						<p><%= docs[i]['comments'][c]['content']%></p>
+					</div>
+				<%	 } %>
+<!--			
+				...End of foreach loop.
+-->
+				<a href="/comments/create?postId=<%= docs[i]['_id'] %>">
+					<h3 id="white" class="small-12 button [radius round] submit text-center">
+						Write a Comment
+					</h3>
+				</a>
+			</div>	
+		</div>
+	</div>
+<%	 } %>
+<!--
+	...END of foreach post loop.
+-->
+</div>
+<% include footer  %>
