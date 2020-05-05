@@ -13,9 +13,15 @@
     "hashids": "*",
     "moment": "^2.8.3",
     "mongojs": "*",
-    "node-uuid": "*"
+    "node-uuid": "*",
+    "snyk": "^1.318.0"
   },
   "devDependencies": {
     "mocha": "*"
-  }
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
